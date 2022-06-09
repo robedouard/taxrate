@@ -48,6 +48,13 @@ var tax float64
 
 func computeTax() {
 	if maritalStatus == "S" || maritalStatus == "s" {
+		/* computeSingle()
+		} else if maritalStatus = "M" || maritalStatus == "m" {
+			computeMarried()
+		} else {
+			fmt.Println("marital status not defined")
+		}
+		*/
 		if grossPay <= Bracket1 {
 			tax = FedRate10 * grossPay
 			fmt.Printf("%v", tax)

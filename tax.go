@@ -65,9 +65,9 @@ func computeTax() {
 			fmt.Printf("%v", tax)
 		} else if grossPay <= Bracket5 && grossPay <= Bracket6 {
 			tax = FedRate10*Bracket1 + FedRate12*(grossPay-Bracket1) + FedRate22*(grossPay-Bracket2) + FedRate24*(grossPay-Bracket3) + FedRate32*(grossPay-Bracket4) + FedRate35*(grossPay-Bracket5)
+			fmt.Printf("%v", tax)
 		} else if grossPay >= Bracket6 {
 			tax = FedRate10*Bracket1 + FedRate12*(grossPay-Bracket1) + FedRate22*(grossPay-Bracket2) + FedRate24*(grossPay-Bracket3) + FedRate32*(grossPay-Bracket4) + FedRate35*(grossPay-Bracket5) + FedRate37*(grossPay-Bracket6)
-
 			fmt.Printf("%v", tax)
 		}
 	} else if maritalStatus == "M" || maritalStatus == "m" {

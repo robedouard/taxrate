@@ -46,7 +46,7 @@ func askMaritalStatus() {
 
 var tax float64
 
-func computeTaxSingle() {
+func computeTax() {
 	if maritalStatus == "S" || maritalStatus == "s" {
 		if grossPay <= Bracket1 {
 			tax = FedRate10 * grossPay
@@ -67,13 +67,8 @@ func computeTaxSingle() {
 			tax = FedRate10*Bracket1 + FedRate12 + (grossPay - Bracket1) + FedRate22*(grossPay-Bracket3) + FedRate24*(grossPay-Bracket4)
 			fmt.Printf("%v", tax)
 		}
-	} else {
+	} else if maritalStatus == "M" || maritalStatus == "m" {
 		fmt.Println("You are married")
-	}
-}
-
-func computeTaxMarried() {
-	if maritalStatus == "M" || maritalStatus == "m" {
 		if grossPay <= MBracket1 {
 			tax = FedRate10 * grossPay
 			fmt.Printf("%v", tax)
@@ -99,6 +94,5 @@ func computeTaxMarried() {
 func main() {
 	askGrossPay()
 	askMaritalStatus()
-	computeTaxSingle()
-	computeTaxMarried()
+	computeTax()
 }

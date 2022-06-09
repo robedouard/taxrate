@@ -54,38 +54,43 @@ func computeTax() {
 		} else if grossPay >= Bracket1 && grossPay <= Bracket2 {
 			tax = FedRate10*Bracket1 + FedRate12*(grossPay-Bracket1)
 			fmt.Printf("%v", tax)
-		} else if grossPay <= Bracket3 && grossPay <= Bracket4 {
+		} else if grossPay <= Bracket2 && grossPay <= Bracket3 {
 			tax = FedRate10*Bracket1 + FedRate12*(grossPay-Bracket1) + FedRate22*(grossPay-Bracket2)
 			fmt.Printf("%v", tax)
-		} else if grossPay <= Bracket4 && grossPay <= Bracket5 {
+		} else if grossPay <= Bracket3 && grossPay <= Bracket4 {
 			tax = FedRate10*Bracket1 + FedRate12*(grossPay-Bracket1) + FedRate22*(grossPay-Bracket2) + FedRate24*(grossPay-Bracket3)
+			fmt.Printf("%v", tax)
+		} else if grossPay <= Bracket4 && grossPay <= Bracket5 {
+			tax = FedRate10*Bracket1 + FedRate12*(grossPay-Bracket1) + FedRate22*(grossPay-Bracket2) + FedRate24*(grossPay-Bracket3) + FedRate32*(grossPay-Bracket4)
 			fmt.Printf("%v", tax)
 		} else if grossPay <= Bracket5 && grossPay <= Bracket6 {
-			tax = FedRate10*Bracket1 + FedRate12*(grossPay-Bracket1) + FedRate22*(grossPay-Bracket2) + FedRate24*(grossPay-Bracket3)
-			fmt.Printf("%v", tax)
+			tax = FedRate10*Bracket1 + FedRate12*(grossPay-Bracket1) + FedRate22*(grossPay-Bracket2) + FedRate24*(grossPay-Bracket3) + FedRate32*(grossPay-Bracket4) + FedRate35*(grossPay-Bracket5)
 		} else if grossPay >= Bracket6 {
-			tax = FedRate10*Bracket1 + FedRate12 + (grossPay - Bracket1) + FedRate22*(grossPay-Bracket3) + FedRate24*(grossPay-Bracket4)
+			tax = FedRate10*Bracket1 + FedRate12*(grossPay-Bracket1) + FedRate22*(grossPay-Bracket2) + FedRate24*(grossPay-Bracket3) + FedRate32*(grossPay-Bracket4) + FedRate35*(grossPay-Bracket5) + FedRate37*(grossPay-Bracket6)
+
 			fmt.Printf("%v", tax)
 		}
 	} else if maritalStatus == "M" || maritalStatus == "m" {
-		fmt.Println("You are married")
 		if grossPay <= MBracket1 {
 			tax = FedRate10 * grossPay
 			fmt.Printf("%v", tax)
 		} else if grossPay >= MBracket1 && grossPay <= MBracket2 {
 			tax = FedRate10*MBracket1 + FedRate12*(grossPay-MBracket1)
 			fmt.Printf("%v", tax)
-		} else if grossPay <= MBracket3 && grossPay <= MBracket4 {
+		} else if grossPay <= MBracket2 && grossPay <= MBracket3 {
 			tax = FedRate10*MBracket1 + FedRate12*(grossPay-MBracket1) + FedRate22*(grossPay-MBracket2)
 			fmt.Printf("%v", tax)
-		} else if grossPay <= MBracket4 && grossPay <= MBracket5 {
+		} else if grossPay <= MBracket3 && grossPay <= MBracket4 {
 			tax = FedRate10*MBracket1 + FedRate12*(grossPay-MBracket1) + FedRate22*(grossPay-MBracket2) + FedRate24*(grossPay-MBracket3)
+			fmt.Printf("%v", tax)
+		} else if grossPay <= MBracket4 && grossPay <= MBracket5 {
+			tax = FedRate10*MBracket1 + FedRate12*(grossPay-MBracket1) + FedRate22*(grossPay-MBracket2) + FedRate24*(grossPay-MBracket3) + FedRate32*(grossPay-MBracket4)
 			fmt.Printf("%v", tax)
 		} else if grossPay <= MBracket5 && grossPay <= MBracket6 {
-			tax = FedRate10*MBracket1 + FedRate12*(grossPay-MBracket1) + FedRate22*(grossPay-MBracket2) + FedRate24*(grossPay-MBracket3)
+			tax = FedRate10*MBracket1 + FedRate12*(grossPay-MBracket1) + FedRate22*(grossPay-MBracket2) + FedRate24*(grossPay-MBracket3) + FedRate32*(grossPay-MBracket4) + FedRate35*(grossPay-MBracket5)
 			fmt.Printf("%v", tax)
 		} else if grossPay >= MBracket6 {
-			tax = FedRate10*MBracket1 + FedRate12 + (grossPay - MBracket1) + FedRate22*(grossPay-MBracket3) + FedRate24*(grossPay-MBracket4)
+			tax = FedRate10*MBracket1 + FedRate12*(grossPay-MBracket1) + FedRate22*(grossPay-MBracket2) + FedRate24*(grossPay-MBracket3) + FedRate32*(grossPay-MBracket4) + FedRate35*(grossPay-MBracket5) + FedRate37*(grossPay-MBracket6)
 			fmt.Printf("%v", tax)
 		}
 	}

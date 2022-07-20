@@ -1,3 +1,3 @@
-module example.com/taxrate
+module github.com/robedouard/taxrate
 
-go 1.16
+go 1.18
